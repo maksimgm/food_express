@@ -4,7 +4,7 @@ var foodSchema = new mongoose.Schema({
                    name: {type:String, required:true},
                    cuisineType: {type:String, required:true},
                    picImg: {type:String, required:true},
-                   recipeLink: {type:String, required:true}
+                   recipeLink: String
                   });
 
 

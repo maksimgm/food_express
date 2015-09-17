@@ -35,7 +35,7 @@
   <h1>Edit Entry</h1>
     <form action="/food" method="POST" class="form-horizontal">  
       <label for="name">Title:</label>
-      <input type="text" required id="name" name="food[name]" value="<%= book.title %>">
+      <input type="text" required id="name" name="food[name]" value="<%= food.name %>">
     </p>
     <p>
       <label for="cuisine_type">Author:</label>
@@ -43,7 +43,11 @@
     </p>
     <p>
       <label for="image">Image URL:</label>
-      <input type="text" id="image" name="food[imgLink]"  value="<%= food.imgLink %>">
+      <input type="text" id="image" name="food[picImg]"  value="<%= food.picImg %>">
+    </p>
+    <p>
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" name="food[recipeLink]"  value="<%= food.recipeLink %>">
     </p>
     <p>
       <input type="submit">

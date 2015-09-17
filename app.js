@@ -1,7 +1,7 @@
-var express = require("express"),
-  app = express();
+var express = require("express"), 
+    app = express();
 
-app.set("view engine", "ejs");
+app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname+"/public"));
 
@@ -23,7 +23,7 @@ app.get("/",function(req,res){
     if(err){
       res.render("404");
     }else{
-      res.render("index",{food:food});
+      res.render("index",{foods:food});
     }
   });
 });
@@ -41,7 +41,7 @@ app.get("/food/:id/edit",function(req,res){
 });
 
 
-app.get("/food/:id",function(req,res){
+app.get("/food/:id/show",function(req,res){
   db.Food.findById(req.params.id, function(err,food){
     if(err){
       res.render("404");
@@ -53,7 +53,7 @@ app.get("/food/:id",function(req,res){
 
 
 app.put("/food/:id",function(req,res){
-  db.Food.findById(req.params.id, req.body.food,function(err,food){
+  db.Food.findByIdAndUpdate(req.params.id, req.body.food,function(err,food){
     if (err) {
       res.render("404");
     }else{
@@ -80,10 +80,13 @@ app.delete("/food/:id",function(req,res){
 
 app.post("/food",function(req,res){
   db.Food.create(req.body.food,function(err,food){
+    console.log("err is ", err);
     if(err){
+      console.log(err);
       var errorText = "Title can't be blank";
       res.render("new", {error: errorText});
     } else {
+      console.log(req.body.food);
       res.redirect("/");
     }
   });
