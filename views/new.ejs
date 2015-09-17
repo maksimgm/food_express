@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Country</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <div class="btn-group" role="group">
+          <a href="/"><button type="button" class="btn btn-default">Home</button></a>
+          <a href="/new"><button type="button" class="btn btn-default">Add Country</button></a>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="container">
+    <div class="col-xs-12">
+    <h1 class="text-center">Add A Country</h1><hr>
+      <div class="form-wrapper">
+        <form action="/food" method="POST" class="form-horizontal">
+          
+          <p>
+            <div class="control-group">
+              <label for="name" class="control-label">Name:</label>
+              <input type="text" id="name" name="food[name]">
+            </div>
+          </p>
+          <p>
+            <div class="control-group">
+              <label for="cuisine_type" class="control-label">Cuisine Type:</label>
+              <input type="text" id="cuisine_type" name="food[cuisineType]">
+            </div>
+          </p>
+          <p>
+            <div class="control-group">
+              <label for="img_link" class="control-label">Recipe Picture:</label>
+              <input type="text" id="img_link" name="food[imgLink]">
+            </div>
+          </p>
+          <p>
+            <div class="control-group">
+              <label for="recipe_link" class="control-label">Recipe Link:</label>
+              <input type="text" id="recipe_link" name="food[recipeLink]">
+            </div>
+          </p>
+          <p>
+            <input class="btn btn-default btn-block btn-info" type="submit">
+          </p>
+        </form>    
+      </div>
+    </div>
+</div>
+  
+</body>
+</html>

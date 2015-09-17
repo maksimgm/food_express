@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="navbar navbar-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="btn-group left-btn" role="group">
+          <a href="/"><button type="submit" class="btn btn-default">Recipe list</button></a>
+        </div>
+        <div class="btn-group right-btn" role="group">
+          <a href="/new"><button type="submit" class="btn btn-default">Add Recipes</button></a>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <% food.forEach(function(food){ %>
+          <tr class="success">
+            <td><a href="/countries/<%= country.id%>"> <%= food.name %> </a></td>
+            <td> <%= food.cuisineType%> 
+              <form action="/countries/<%= country.id%>/edit" method="GET">
+                <label for="change"></label>
+                <button type="submit" class="btn btn-success btn-block" id="change">Alter</button>
+              </form>
+              <form action="/countries/<%= country.id%>?_method=delete" method="POST">
+              <label for="delete"></label>
+              <button type="submit" class="btn btn-danger btn-block" id="delete">Delete</button>
+              </form>
+            </td>
+            <td><img src="<%= food.picImg %> " height="150" width="200"> </td>
+            <td> <%= food.picImg %> </td>
+            <td> <%= food.urlLink%> </td>
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
