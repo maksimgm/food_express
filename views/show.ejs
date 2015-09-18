@@ -9,7 +9,7 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
         <div class="btn-group" role="group">
-          <a href="/"><button type="button" class="btn btn-default">Home</button></a>
+          <a href="/"><button type="button" class="btn btn-default">Recipe List</button></a>
           <a href="/new"><button type="button" class="btn btn-default">Add Recipe</button></a>
         </div>
       </div>
@@ -31,8 +31,8 @@
 <!-- style using a table -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <table class="table table-bordered">
+    <div class="col-xs-12 ">
+      <table class="table table-bordered table-striped">
         <thead>
           <tr>
             <td><strong>Name:</strong></td>
@@ -43,10 +43,10 @@
         </thead> 
         <tbody>
           <tr>
-            <td> <%= food.name %> </td>
-            <td> <%= food.cuisineType %></td>
-            <td> <%= food.picImg %></td>
-            <td> <%= food.recipeLink %></td>
+            <td><%= food.name %> </td>
+            <td><%= food.cuisineType %></td>
+            <td><img src="<%= food.picImg %>" height="150" width="250" alt=""></td>
+            <td><a href=" <%= food.recipeLink %>" alt=""> <%= food.recipeLink %></a></td>
           </tr>
         </tbody>
       </table>  

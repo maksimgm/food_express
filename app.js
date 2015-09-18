@@ -63,10 +63,6 @@ app.put("/food/:id",function(req,res){
   });
 });
 
-// name: {type:String, required:true},
-// cuisineType: {type:String, required:true},
-// picImg: {type:String, required:true},
-// recipeLink: {type:String, required:true}
 
 app.delete("/food/:id",function(req,res){
   db.Food.findByIdAndRemove(req.params.id,function(err,food){
@@ -83,7 +79,7 @@ app.post("/food",function(req,res){
     console.log("err is ", err);
     if(err){
       console.log(err);
-      var errorText = "Title can't be blank";
+      var errorText = "Name can't be blank";
       res.render("new", {error: errorText});
     } else {
       console.log(req.body.food);

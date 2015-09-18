@@ -9,54 +9,53 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   
-  <link rel="stylesheet" href="/style_sheets/style.css">
+  <link rel="stylesheet" href="/style.css">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="navbar navbar-default">
+<div class="navbar navbar-default">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
+      <div class="col-xs-4 col-xs-offset-4">
         <div class="btn-group" role="group">
-          <a href="/"><button type="button" class="btn btn-default">Home</button></a>
-          <a href="/new"><button type="button" class="btn btn-default">New Books</button></a>
+          <a href="/"><button type="button" class="btn btn-default">Recipe List</button></a>
+          <a href="/new"><button type="button" class="btn btn-default">Add Recipe</button></a>
         </div>
       </div>
     </div>
   </div>  
 </div>
-  <form action="/food/<%= food.id%>?_method=put" method="POST">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-  <h1>Edit Entry</h1>
-    <form action="/food" method="POST" class="form-horizontal">  
-      <label for="name">Title:</label>
-      <input type="text" required id="name" name="food[name]" value="<%= food.name %>">
-    </p>
-    <p>
-      <label for="cuisine_type">Author:</label>
-      <input type="text" required id="cuisine_type" name="food[cuisineType]" value="<%= food.cuisineType %>">
-    </p>
-    <p>
-      <label for="image">Image URL:</label>
-      <input type="text" id="image" name="food[picImg]"  value="<%= food.picImg %>">
-    </p>
-    <p>
-      <label for="image">Image URL:</label>
-      <input type="text" id="image" name="food[recipeLink]"  value="<%= food.recipeLink %>">
-    </p>
-    <p>
-      <input type="submit">
-    </p>
-  </form>
-        
+    <div class="col-xs-10 col-xs-offset-1">
+    <h1 class="text-center">Edit A Recipe</h1><hr>
+      <div class="form-wrapper">
+        <form action="/food/<%= food.id%>?_method=put" method="POST"> 
+          <div class="col-xs-10 col-xs-offset-1">
+            <div class="form-group">
+              <label for="name" class="control-label">Name:</label>
+              <input type="text" id="name" name="food[name]" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="cuisine_type" class="control-label">Cuisine Type:</label>
+              <input type="text" id="cuisine_type" name="food[cuisineType]" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="img_link" class="control-label">Recipe Picture:</label>
+              <input type="text" id="img_link" name="food[picImg]" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="recipe_link" class="control-label">Recipe Link:</label>
+              <input type="text" id="recipe_link" name="food[recipeLink]" class="form-control">
+            </div>
+            <input class="btn btn-default btn-block btn-info" type="submit">
+          </div>
+        </form>    
       </div>
     </div>
-  </div>  
-    <p>
+</div>
+    <!-- <p> -->
 </body>
 </html>
